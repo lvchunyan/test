@@ -37,9 +37,6 @@ export default {
       }
       inboundChart = echarts.init(document.getElementById('echarts'))
       inboundChart.setOption($this.option)
-      /* window.addEventListener('resize', function () {
-                     salesChart.resize();
-                 }); */
     }
   }
 }
