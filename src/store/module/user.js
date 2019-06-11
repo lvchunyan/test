@@ -8,7 +8,7 @@ import {
   restoreTrash
 } from '@/api/user'
 import path from '@/libs/path'
-import eventScource from '../../eventsource.min'
+import '../../eventsource.min'
 
 export default {
   state: {
