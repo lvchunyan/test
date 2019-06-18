@@ -20,6 +20,7 @@ import './assets/styles/common.less'
 import 'babel-polyfill'
 import Promise from 'es6-promise'
 import VCharts from 'v-charts'
+// import 'video.js/dist/video-js.css'
 
 Promise.polyfill()
 Vue.use(iView, {
