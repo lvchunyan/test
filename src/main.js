@@ -20,7 +20,8 @@ import './assets/styles/common.less'
 import 'babel-polyfill'
 import Promise from 'es6-promise'
 import VCharts from 'v-charts'
-// import 'video.js/dist/video-js.css'
+import audio from 'vue-mobile-audio'
+import vueAudioNative from 'vue-audio-native'
 
 Promise.polyfill()
 Vue.use(iView, {
@@ -29,6 +30,8 @@ Vue.use(iView, {
 Vue.use(VCharts)
 Vue.use(VOrgTree)
 Vue.use(VueBus)
+Vue.use(audio)
+Vue.use(vueAudioNative)
 /**
  * @description 注册admin内置插件
  */
