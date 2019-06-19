@@ -24,6 +24,9 @@ export default {
   mounted () {
     this.echartsMit()
   },
+  beforeDestroy () {
+    console.log(222)
+  },
   methods: {
     // 绘制指标图
     echartsMit () {

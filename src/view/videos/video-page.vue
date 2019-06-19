@@ -1,10 +1,10 @@
 <template>
     <div>
         <div v-for="(item, index) in videoList" :key="index">
-            <video-player  class="video-player vjs-custom-skin"
-                           ref="videoPlayer"
-                           :playsinline="true"
-                           :options="item.playerOptions"
+            <video-player class="video-player vjs-custom-skin"
+                          ref="videoPlayer"
+                          :playsinline="true"
+                          :options="item.playerOptions"
             ></video-player>
         </div>
     </div>
@@ -13,11 +13,11 @@
 <script>
 import { videoPlayer } from 'vue-video-player'
 import 'video.js/dist/video-js.css'
-// import 'videojs-flash'
+import 'videojs-flash'
 import 'videojs-contrib-hls'
 
 export default {
-  name: 'video-mp4',
+  name: 'video-page',
   components: {
     videoPlayer
   },
@@ -29,21 +29,31 @@ export default {
   mounted () {
     this.getVideoList()
   },
+  beforeDestroy () {
+    if (this.$refs.videoPlayer.length) {
+      this.$refs.videoPlayer.forEach(function (e) {
+        e.dispose()
+      })
+    }
+  },
   methods: {
     getVideoList () {
       let $this = this
       $this.videoList = []
       let list = [
         {
+          techOrder: ['html5'], // 设置顺序
           type: 'video/mp4',
           src: 'http://vjs.zencdn.net/v/oceans.mp4'
         },
         {
+          techOrder: ['html5'], // 设置顺序
           withCredentials: false,
           type: 'application/x-mpegURL',
           src: 'http://hls.open.ys7.com/openlive/1342c16c7e164288a8c725fb78c15611.m3u8'
         },
         {
+          techOrder: ['flash'], // 设置顺序
           type: 'rtmp/hls',
           src: 'rtmp://live.hkstv.hk.lxdns.com/live/hks'
         }
@@ -69,6 +79,7 @@ export default {
             fullscreenToggle: true // 全屏按钮
           }
         }
+        playerOptions.techOrder = e.techOrder
         playerOptions.sources.push(e)
         $this.videoList.push({ playerOptions: playerOptions })
       })
