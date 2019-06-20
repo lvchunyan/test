@@ -215,16 +215,23 @@ export const appRouter = [
     access: 1,
     meta: {
       icon: 'ios-book',
-      title: 'curd组件'
+      title: 'echarts图表'
     },
     component: Main,
     children: [
       {
-        path: '/echarts-liquidfill',
-        name: 'echarts-liquidfill',
+        path: '/liquidfill-echarts',
+        name: 'liquidfill-echarts',
         access: 1,
         meta: { icon: 'md-browsers', notCache: true, title: '水球' },
-        component: () => import('@/view/echarts/echarts-liquidfill.vue')
+        component: () => import('@/view/echarts/liquidfill-echarts.vue')
+      },
+      {
+        path: '/line-echarts',
+        name: 'line-echarts',
+        access: 1,
+        meta: { icon: 'md-browsers', notCache: true, title: '折线图' },
+        component: () => import('@/view/echarts/line-echarts.vue')
       }
     ]
   },

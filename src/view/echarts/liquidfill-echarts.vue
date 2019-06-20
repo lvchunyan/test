@@ -30,12 +30,12 @@
 <script>
 import echarts from 'echarts'
 
-let oneChart = null
-let twoChart = null
-let threeChart = null
-let fourChart = null
+let oneChart = null;
+let twoChart = null;
+let threeChart = null;
+let fourChart = null;
 export default {
-  name: 'echarts-liquidfill',
+  name: 'liquidfill-echarts',
   data () {
     return {
       chartData: {
@@ -48,27 +48,27 @@ export default {
     }
   },
   mounted () {
-    this.getOneChart()
-    this.getTwoChart()
-    this.getThreeChart()
-    this.getFourChart()
+    this.getOneChart();
+    this.getTwoChart();
+    this.getThreeChart();
+    this.getFourChart();
   },
   methods: {
     // 绘制指标图
     getOneChart () {
-      let $this = this
+      let $this = this;
       $this.option = {
         series: [{
           type: 'liquidFill',
           data: [0.6]
         }]
-      }
-      oneChart = echarts.init(document.getElementById('oneChart'))
+      };
+      oneChart = echarts.init(document.getElementById('oneChart'));
       oneChart.setOption($this.option)
     },
     getTwoChart () {
-      let $this = this
-      let value = 0.12// 百分比
+      let $this = this;
+      let value = 0.12;// 百分比
       $this.option = {
         series: [{
           type: 'liquidFill',
@@ -103,12 +103,12 @@ export default {
             }
           }
         }]
-      }
-      twoChart = echarts.init(document.getElementById('twoChart'))
+      };
+      twoChart = echarts.init(document.getElementById('twoChart'));
       twoChart.setOption($this.option)
     },
     getThreeChart () {
-      let $this = this
+      let $this = this;
       $this.option = {
         series: [{
           type: 'liquidFill',
@@ -156,12 +156,12 @@ export default {
           }
 
         }]
-      }
-      threeChart = echarts.init(document.getElementById('threeChart'))
+      };
+      threeChart = echarts.init(document.getElementById('threeChart'));
       threeChart.setOption($this.option)
     },
     getFourChart () {
-      let $this = this
+      let $this = this;
       $this.option = {
         series: [{
           type: 'liquidFill',
@@ -232,8 +232,8 @@ export default {
             }
           }
         }]
-      }
-      fourChart = echarts.init(document.getElementById('fourChart'))
+      };
+      fourChart = echarts.init(document.getElementById('fourChart'));
       fourChart.setOption($this.option)
     }
   }
