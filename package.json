@@ -20,6 +20,7 @@
     "cropperjs": "^1.2.2",
     "dayjs": "^1.7.7",
     "echarts": "^4.2.1",
+    "echarts-gl": "^1.1.1",
     "echarts-liquidfill": "^2.0.4",
     "es6-promise": "^4.2.4",
     "hls.js": "^0.12.4",
