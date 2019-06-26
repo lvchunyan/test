@@ -253,6 +253,13 @@ export const appRouter = [
         access: 1,
         meta: { icon: 'md-browsers', notCache: true, title: '关系图' },
         component: () => import('@/view/echarts/graph-echarts.vue')
+      },
+      {
+        path: '/scatter-echarts',
+        name: 'scatter-echarts',
+        access: 1,
+        meta: { icon: 'md-browsers', notCache: true, title: '散点图' },
+        component: () => import('@/view/echarts/scatter-echarts.vue')
       }
     ]
   },
