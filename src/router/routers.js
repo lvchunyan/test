@@ -241,6 +241,13 @@ export const appRouter = [
         component: () => import('@/view/echarts/bar-echarts.vue')
       },
       {
+        path: '/pie-echarts',
+        name: 'pie-echarts',
+        access: 1,
+        meta: { icon: 'md-browsers', notCache: true, title: '饼图' },
+        component: () => import('@/view/echarts/pie-echarts.vue')
+      },
+      {
         path: '/map-echarts',
         name: 'map-echarts',
         access: 1,
