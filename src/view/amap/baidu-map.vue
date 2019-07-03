@@ -5,7 +5,7 @@
 <script>
 
 export default {
-  name: 'amap',
+  name: 'baidu-map',
   data () {
     return {
       map: {},
